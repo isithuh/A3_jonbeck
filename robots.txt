@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Student coursework for GRD263 (Murdoch University / Kaplan Singapore).
+# Hosted temporarily for usability testing only. Not for indexing.

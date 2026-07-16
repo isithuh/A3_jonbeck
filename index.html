@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jon Beck — Fine Art Photography</title>
+  <meta name="description" content="Jon Beck: international award-winning fine art, portrait, landscape and architectural photographer based in Queensland, Australia.">
+
+  <!-- Bootstrap 5.3.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font: Poppins (free for commercial use, SIL Open Font Licence) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Custom layer -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ Header / Navigation ============ -->
+  <header>
+    <nav class="navbar navbar-expand-lg site-nav sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo/jon-beck-wordmark.png" alt="Jon Beck Photography wordmark logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNav" aria-controls="mainNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <!-- Primary menu — 5 options, centred (Gallery 1st + About 2nd per A3 brief) -->
+          <ul class="navbar-nav mx-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#prints">Prints</a></li>
+            <li class="nav-item"><a class="nav-link" href="#workshops">Workshops</a></li>
+            <li class="nav-item"><a class="nav-link" href="#enquire">Contact</a></li>
+          </ul>
+          <!-- Right-side actions: search + Enquire -->
+          <ul class="navbar-nav align-items-lg-center mb-0">
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <button class="nav-search" type="button" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                     fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.1-.115zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+              </button>
+            </li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+              <a class="btn btn-enquire" href="#enquire">Enquire</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ 1 · Hero ============ -->
+    <!-- Full-bleed photograph with a translucent overlay card (new wireframe) -->
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-center hero-row g-4">
+          <!-- Photo: stacked on top on mobile, right column on tablet, background on desktop -->
+          <div class="col-md-6 hero-media order-md-2">
+            <img class="hero-img" src="images/gallery/landscape/Naveed-Farro3.jpg"
+                 alt="Fine art photograph by Jon Beck: a graffiti-covered car wreck in golden outback grass">
+          </div>
+          <div class="col-md-6 hero-text order-md-1">
+            <h1 class="poppins">Every photograph <br class="d-none d-md-inline">tells a story, <br>but with a difference.</h1>
+            <p class="lead mt-3">International award-winning fine art photographer. Portraits, seascapes, landscapes and buildings.</p>
+            <div class="hero-actions d-flex flex-wrap gap-2 mt-3">
+              <a class="btn btn-enquire" href="#prints">View prints</a>
+              <a class="btn btn-outline-ink" href="#workshops">Explore workshops</a>
+            </div>
+            <!-- Section 3 compressed into 3 capsules, mobile only -->
+            <ul class="hero-capsules d-md-none">
+              <li class="hero-capsule">Award winner</li>
+              <li class="hero-capsule">Fujiflex</li>
+              <li class="hero-capsule">Editions 50+</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2 · Trust badges ============ -->
+    <!-- Detailed 4-column strip on tablet + desktop; compressed to capsules in the hero on mobile -->
+    <section class="trust-strip d-none d-md-block">
+      <div class="container">
+        <!-- Heading is hidden visually but read aloud by screen readers, so the section is named -->
+        <h2 class="visually-hidden">Why collectors trust Jon Beck</h2>
+        <ul class="row text-center list-unstyled mb-0 trust-row">
+          <li class="col-3 trust-item">
+            <span class="trust-title">International<br>award winner</span>
+            <span class="trust-sub">15+ years</span>
+          </li>
+          <li class="col-3 trust-item">
+            <span class="trust-title">Featured in<br>editorial press</span>
+          </li>
+          <li class="col-3 trust-item">
+            <span class="trust-title">Fujiflex Crystal<br>Archive paper</span>
+            <span class="trust-sub">museum-grade</span>
+          </li>
+          <li class="col-3 trust-item">
+            <span class="trust-title">Certificate of<br>Authenticity</span>
+            <span class="trust-sub">hand-signed</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 3 · Latest series feature ============ -->
+    <!-- Editorial story: full-width eyebrow, image col-8, text col-4 (new wireframe) -->
+    <section class="section latest-series">
+      <div class="container">
+        <!-- Full-width eyebrow on desktop only -->
+        <p class="ls-eyebrow d-none d-lg-block">From the latest series · Story 01</p>
+        <div class="row align-items-center g-4 g-lg-5 ls-row">
+          <div class="col-md-8 ls-media">
+            <img class="img-fluid rounded-1"
+                 src="images/gallery/landscape/Aditi_Goenka_.jpg"
+                 alt="Waves breaking over coastal rocks at first light, from Jon Beck's Sydney Seascape series"
+                 loading="lazy">
+          </div>
+          <div class="col-md-4 ls-text">
+            <!-- On mobile + tablet the eyebrow sits in the text column -->
+            <p class="ls-eyebrow d-lg-none">From the latest series</p>
+            <h2 class="ls-headline poppins"><span class="ls-name">Sydney Seascape</span><span class="ls-mid" aria-hidden="true"> · </span><span class="ls-date">July 2024</span></h2>
+            <p class="ls-meta"><span class="ls-loc">Tamarama Beach, NSW</span><span class="ls-mid2" aria-hidden="true"> · </span><span class="ls-ed">Edition 12 of 50<span class="ls-fuji d-none d-md-inline"> · Fujiflex</span></span></p>
+            <hr class="ls-divider d-none d-md-block">
+            <p class="ls-body">Shot on a long exposure at first light. The fog hadn't lifted off the headland and the sea was still glass for less than two minutes.<span class="ls-extra d-md-none"> Hand-printed on Fujiflex, edition of fifty.</span></p>
+            <a class="ls-readmore" href="gallery.html">Read the full story →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4 · Browse the work ============ -->
+    <!-- Bento grid: featured Seascapes tile, captions below in maroon (new wireframe) -->
+    <section class="section browse-work">
+      <div class="container">
+        <div class="bw-head">
+          <h2 class="poppins mb-0">Browse the work</h2>
+          <a class="bw-viewall d-none d-md-inline" href="gallery.html">View all work →</a>
+        </div>
+        <div class="bw-grid">
+          <figure class="bw-tile bw-seascapes">
+            <a class="bw-link" href="gallery.html">
+              <img src="images/gallery/landscape/Aditi_Goenka_.jpg" alt="Seascapes by Jon Beck" loading="lazy">
+            </a>
+            <figcaption><span class="bw-cat">Seascapes</span><span class="bw-count">28 prints<span class="d-none d-lg-inline"> · signature work</span></span></figcaption>
+          </figure>
+          <figure class="bw-tile bw-portraits">
+            <a class="bw-link" href="gallery.html">
+              <img src="images/gallery/portraits/01Jessica_woods.jpg" alt="Portraits by Jon Beck: a woman holding a black balloon against a red backdrop" loading="lazy">
+            </a>
+            <figcaption><span class="bw-cat">Portraits</span><span class="bw-count">12 prints</span></figcaption>
+          </figure>
+          <figure class="bw-tile bw-landscapes">
+            <a class="bw-link" href="gallery.html">
+              <img src="images/gallery/landscape/Emily-Heron.jpg" alt="Landscapes by Jon Beck" loading="lazy">
+            </a>
+            <figcaption><span class="bw-cat">Landscapes</span><span class="bw-count">42 prints</span></figcaption>
+          </figure>
+          <figure class="bw-tile bw-buildings">
+            <a class="bw-link" href="gallery.html">
+              <img src="images/gallery/buildings/Xanthe-Cohen_.jpg" alt="Buildings by Jon Beck: a corrugated iron shed in bright sunlight" loading="lazy">
+            </a>
+            <figcaption><span class="bw-cat">Buildings</span><span class="bw-count">16 prints</span></figcaption>
+          </figure>
+          <figure class="bw-tile bw-street">
+            <a class="bw-link" href="gallery.html">
+              <img src="images/gallery/street/171643585_8e0d637bfb_b.jpg" alt="Street photography by Jon Beck: people sitting on a concrete wall at night beside a bicycle" loading="lazy">
+            </a>
+            <figcaption><span class="bw-cat">Street</span><span class="bw-count">9 prints</span></figcaption>
+          </figure>
+          <a class="bw-tile bw-cta" href="gallery.html">
+            <span class="d-md-none">View all work →</span>
+            <span class="d-none d-md-inline">+ Commissions</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5 · Limited edition prints ============ -->
+    <!-- Four equal feature columns, one icon set, single orange CTA (A2 note 6) -->
+    <section class="section editions" id="prints">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="ed-heading poppins mb-0">Limited edition prints, made to last.</h2>
+        </div>
+        <div class="row g-3 g-lg-4 ed-grid">
+          <div class="col-6 col-lg-3">
+            <div class="edition-item">
+              <img class="edition-icon" src="images/icons/1_editions_certificate.svg" alt="">
+              <div class="edition-text">
+                <h3 class="edition-title">Editions of 50, 100 or 250</h3>
+                <p class="edition-copy">Hand-signed<span class="d-none d-md-inline d-lg-none">, registered</span>. Price rises 20% per 10% sold.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="edition-item">
+              <img class="edition-icon" src="images/icons/2_fujiflex_print.svg" alt="">
+              <div class="edition-text">
+                <h3 class="edition-title">Fujiflex Crystal Archive paper</h3>
+                <p class="edition-copy">Ultra-high gloss museum-grade.<span class="d-lg-none"> 40-year archival<span class="d-none d-md-inline"> rating</span>.</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="edition-item">
+              <img class="edition-icon" src="images/icons/3_museum_framing.svg" alt="">
+              <div class="edition-text">
+                <h3 class="edition-title">Museum-grade framing</h3>
+                <p class="edition-copy">Custom-made, conservation acrylic<span class="d-lg-none">, archival<span class="d-none d-md-inline"> matboard</span></span>.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="edition-item">
+              <img class="edition-icon" src="images/icons/4_worldwide_globe.svg" alt="">
+              <div class="edition-text">
+                <h3 class="edition-title">Worldwide shipping</h3>
+                <p class="edition-copy"><span class="d-none d-md-inline d-lg-none">Free on unframed prints. Framed delivered 4–6 weeks.</span><span class="d-md-none">Free unframed. Framed in 4–6 weeks.</span><span class="d-none d-lg-inline">Free unframed. Framed 4–6 weeks.</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a class="btn btn-enquire" href="#enquire">Shop <span class="d-none d-lg-inline">all </span>prints<span class="d-none d-lg-inline"> &rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6 · Photography workshops ============ -->
+    <!-- One Bootstrap carousel serves every breakpoint: it swipes card-by-card
+         on mobile, and CSS re-lays the same three items as a 3-up grid on
+         tablet, then a featured card + two mini cards on desktop (A2 note 7).
+         All copy comes verbatim from the client questionnaire. -->
+    <section class="section workshops" id="workshops">
+      <div class="container">
+        <div class="ws-head">
+          <h2 class="poppins mb-2">Photography workshops with Jon.</h2>
+          <p class="ws-sub d-none d-md-block">Small groups, hand-led tours in some of Australia's most photographed regions.</p>
+          <p class="ws-sub d-md-none">Small groups, hand-led tours. Swipe to browse.</p>
+        </div>
+
+        <div class="carousel slide ws-carousel" id="workshopCarousel">
+          <div class="carousel-inner ws-grid">
+
+            <!-- 6a · Wild Tasmania — next upcoming; the featured card on desktop -->
+            <div class="carousel-item active ws-item ws-featured" data-ws-name="Wild Tasmania">
+              <article class="ws-card">
+                <img class="ws-img"
+                     src="images/gallery/landscape/James-Richards-30492613-BUNKER-SUN-RAYS.jpg"
+                     alt="Windswept tree over red coastal rock at sunset in Tasmania's south-west"
+                     loading="lazy">
+                <div class="ws-body">
+                  <div class="ws-info">
+                    <p class="ws-eyebrow d-none d-lg-block">Next upcoming workshop</p>
+                    <h3 class="ws-title">
+                      <span>Wild Tasmania<span class="d-none d-lg-inline"> · 5-day photography tour</span></span>
+                      <span class="ws-title-date d-md-none">23–27 March 2030</span>
+                    </h3>
+                    <!-- Serif detail lines: stacked on mobile + tablet, single line on desktop -->
+                    <p class="ws-line d-md-none">5-day tour</p>
+                    <p class="ws-line d-none d-md-block d-lg-none">5-day · 23–27 March 2030</p>
+                    <p class="ws-line d-lg-none">Tasmania, Australia</p>
+                    <p class="ws-line ws-strong d-none d-md-block d-lg-none">6–8 spots remaining</p>
+                    <p class="ws-line d-none d-lg-block">23–27 March 2030 · Tasmania · 6–8 spots remaining</p>
+                    <div class="ws-row d-md-none">
+                      <span class="ws-line ws-strong">6–8 spots remaining</span>
+                      <span class="ws-price">$1,150</span>
+                    </div>
+                  </div>
+                  <div class="ws-buy d-none d-md-block">
+                    <p class="ws-price">$1,150<span class="ws-price-note d-none d-lg-block">per participant</span></p>
+                    <a class="btn btn-enquire ws-btn" href="#enquire">Reserve a spot<span class="d-none d-lg-inline"> &rarr;</span></a>
+                  </div>
+                  <a class="btn btn-enquire ws-btn d-md-none" href="#enquire">Reserve a spot</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 6b · Character of Ballarat — mini card on desktop -->
+            <div class="carousel-item ws-item ws-mini" data-ws-name="Character of Ballarat">
+              <article class="ws-card">
+                <img class="ws-img"
+                     src="images/gallery/buildings/Sophie-Simmons-31250843-(2).jpg"
+                     alt="Classical stone facade with arched windows in Ballarat, Victoria"
+                     loading="lazy">
+                <div class="ws-body">
+                  <div class="ws-info">
+                    <h3 class="ws-title">
+                      <span>Character of Ballarat</span>
+                      <span class="ws-title-date d-md-none">2–17 August 2030</span>
+                    </h3>
+                    <p class="ws-line d-md-none">5-day tour</p>
+                    <p class="ws-line d-none d-md-block d-lg-none">5-day · 2–17 August 2030</p>
+                    <p class="ws-line d-lg-none">Ballarat, Victoria</p>
+                    <p class="ws-line ws-strong d-none d-md-block d-lg-none">6–8 spots remaining</p>
+                    <p class="ws-line d-none d-lg-block">5-day · 2–17 Aug 2030</p>
+                    <p class="ws-line ws-strong d-none d-lg-block">6–8 spots · $1,150</p>
+                    <div class="ws-row d-md-none">
+                      <span class="ws-line ws-strong">6–8 spots remaining</span>
+                      <span class="ws-price">$1,150</span>
+                    </div>
+                    <a class="ws-link d-none d-lg-inline-block" href="#enquire">Reserve &rarr;</a>
+                  </div>
+                  <div class="ws-buy d-none d-md-block d-lg-none">
+                    <p class="ws-price">$1,150</p>
+                    <a class="btn btn-enquire ws-btn" href="#enquire">Reserve a spot</a>
+                  </div>
+                  <a class="btn btn-enquire ws-btn d-md-none" href="#enquire">Reserve a spot</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- 6c · Sydney Seascapes — sold out; stone mini card on desktop -->
+            <div class="carousel-item ws-item ws-mini ws-alt" data-ws-name="Sydney Seascapes">
+              <article class="ws-card">
+                <!-- Upright copy of the original, which is stored rotated 90° -->
+                <img class="ws-img"
+                     src="images/gallery/landscape/Tash-Prokop-Body-Boarders-upright.jpg"
+                     alt="Body boarders silhouetted on a Sydney beach at sunset"
+                     loading="lazy">
+                <div class="ws-body">
+                  <div class="ws-info">
+                    <h3 class="ws-title">
+                      <span>Sydney Seascapes</span>
+                      <span class="ws-title-date d-md-none">6 July 2030</span>
+                    </h3>
+                    <p class="ws-line d-md-none">1-day tour</p>
+                    <p class="ws-line d-none d-md-block d-lg-none">1-day · 6 July 2030</p>
+                    <p class="ws-line d-lg-none">Sydney, NSW</p>
+                    <p class="ws-line ws-sold d-none d-md-block d-lg-none">SOLD OUT · 4–6 participants</p>
+                    <p class="ws-line d-none d-lg-block">1-day · 6 July 2030</p>
+                    <p class="ws-line ws-sold d-none d-lg-block">SOLD OUT · Price on enquiry</p>
+                    <div class="ws-row d-md-none">
+                      <span class="ws-line ws-sold">SOLD OUT · 4–6 participants</span>
+                      <span class="ws-line">Price on enquiry</span>
+                    </div>
+                    <a class="ws-link d-none d-lg-inline-block" href="#enquire">Join the waitlist &rarr;</a>
+                  </div>
+                  <div class="ws-buy d-none d-md-block d-lg-none">
+                    <p class="ws-line ws-enquiry">Price on enquiry</p>
+                    <a class="btn btn-enquire ws-btn" href="#enquire">Join the waitlist</a>
+                  </div>
+                  <a class="btn btn-enquire ws-btn d-md-none" href="#enquire">Join the waitlist</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Swipe arrows + dots + counter: mobile only -->
+          <button class="carousel-control-prev d-md-none" type="button"
+                  data-bs-target="#workshopCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous workshop</span>
+          </button>
+          <button class="carousel-control-next d-md-none" type="button"
+                  data-bs-target="#workshopCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next workshop</span>
+          </button>
+          <div class="ws-foot d-md-none">
+            <div class="carousel-indicators ws-dots">
+              <button type="button" class="active" data-bs-target="#workshopCarousel"
+                      data-bs-slide-to="0" aria-current="true" aria-label="Wild Tasmania"></button>
+              <button type="button" data-bs-target="#workshopCarousel"
+                      data-bs-slide-to="1" aria-label="Character of Ballarat"></button>
+              <button type="button" data-bs-target="#workshopCarousel"
+                      data-bs-slide-to="2" aria-label="Sydney Seascapes"></button>
+            </div>
+            <p class="ws-counter mb-0" aria-live="polite">1 of 3 · Wild Tasmania</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7 · About Jon ============ -->
+    <!-- High-contrast B&W portrait beside the 15-years story (A2 note 8).
+         Copy varies by breakpoint: quote + credentials on desktop, the client
+         paragraph on tablet, a one-line credential on mobile (sage band). -->
+    <section class="section about-jon" id="about">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-4 col-md-5 col-lg-6">
+            <img class="img-fluid aj-img"
+                 src="images/gallery/portraits/ALEX%2007_DAD.png"
+                 alt="High-contrast black and white portrait of photographer Jon Beck"
+                 loading="lazy">
+          </div>
+          <div class="col-8 col-md-7 col-lg-6">
+            <p class="aj-eyebrow">About Jon</p>
+            <h2 class="poppins aj-heading">
+              <span class="d-none d-md-inline">15 years behind the camera, based in Queensland.</span>
+              <span class="d-md-none">15 years behind the camera, Queensland.</span>
+            </h2>
+            <hr class="aj-rule d-none d-lg-block">
+            <p class="aj-quote d-none d-lg-block">"I'm drawn to the diversity of the world<br>Australia's red soil centre, the character in people's faces."</p>
+            <p class="aj-body d-none d-md-block d-lg-none">Jon Beck has been working in photography for over fifteen years. A professional photographer who combines precise technical skills with an approachable, personable demeanour.</p>
+            <p class="aj-body d-md-none">Award-winning fine art photographer.</p>
+            <p class="aj-creds d-none d-lg-block">15+ years · Award-winning · Represented internationally</p>
+            <a class="aj-link" href="about.html">Read the full story &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ 8 · Footer ============ -->
+  <!-- Combination mark + four labelled link columns grouped by proximity,
+       newsletter CTA, and a legal base row (A2 note 9). On mobile the
+       columns compress into labelled rows beside the logo. -->
+  <footer class="site-footer" id="enquire">
+    <div class="container">
+      <div class="row gy-4 gx-lg-5">
+        <!-- Brand column: serif tagline appears on desktop only -->
+        <div class="col-4 col-md-3 col-lg-4">
+          <img class="footer-logo" src="images/logo/jon-beck-combination-trimmed.png"
+               alt="Jon Beck Photography crossed-arrows logo">
+          <p class="footer-tag d-none d-lg-block mb-0">Every photograph tells a story<br>but with a difference.</p>
+        </div>
+
+        <!-- Link groups: four columns on tablet + desktop, labelled rows on mobile -->
+        <div class="col-8 col-md-9 col-lg-8">
+          <div class="row gy-2 gy-md-4">
+            <div class="col-12 col-md-3 footer-group">
+              <p class="footer-head">Work</p>
+              <ul class="list-unstyled footer-links mb-0">
+                <li><a href="gallery.html">Portraits</a></li>
+                <li><a href="gallery.html">Seascapes</a></li>
+                <li><a href="gallery.html">Landscapes</a></li>
+                <li><a href="gallery.html">Buildings</a></li>
+                <li><a href="gallery.html">Street</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-3 footer-group">
+              <p class="footer-head">Shop</p>
+              <ul class="list-unstyled footer-links mb-0">
+                <li><a href="#prints">Prints</a></li>
+                <li><a href="#prints">Editions</a></li>
+                <li><a href="#prints">Gift cards</a></li>
+                <li class="d-none d-md-block"><a href="#prints">Commissions</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-3 footer-group">
+              <p class="footer-head">Studio</p>
+              <ul class="list-unstyled footer-links mb-0">
+                <li><a href="about.html">About Jon</a></li>
+                <li><a href="#enquire">Press</a></li>
+                <li><a href="#enquire">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-3 footer-group">
+              <p class="footer-head">Connect</p>
+              <ul class="list-unstyled footer-links mb-0">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li class="d-none d-md-block"><a href="#">Journal</a></li>
+              </ul>
+            </div>
+            <!-- Mobile-only newsletter label, sitting with the other rows -->
+            <div class="col-12 footer-group d-md-none">
+              <p class="footer-head mb-0">Newsletter</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter: labelled strip on desktop, input + button elsewhere -->
+      <div class="footer-signup row align-items-center gy-3 mt-1 mt-md-3 mt-lg-4">
+        <div class="col-lg-6 d-none d-lg-block">
+          <p class="footer-signup-label mb-0">Sign up for new editions and workshop dates.</p>
+        </div>
+        <div class="col-12 col-md-7 offset-md-5 col-lg-6 offset-lg-0">
+          <form class="footer-form d-flex gap-2" action="#enquire" method="post">
+            <label class="visually-hidden" for="newsletter">Email address</label>
+            <input class="form-control" type="email" id="newsletter" name="newsletter"
+                   placeholder="your@email.com" autocomplete="email" required>
+            <button class="btn btn-subscribe" type="submit" aria-label="Subscribe">
+              <span class="d-md-none" aria-hidden="true">Subscribe</span>
+              <span class="d-none d-md-inline d-lg-none" aria-hidden="true">&rarr;</span>
+              <span class="d-none d-lg-inline" aria-hidden="true">Subscribe &rarr;</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Legal base row -->
+      <div class="footer-base mt-4 pt-3">
+        <p class="mb-0">&copy; Jon Beck Photography 2030<span class="d-none d-md-inline">. All rights reserved.</span></p>
+        <p class="mb-0"><a href="#">Privacy</a> · <a href="#">Shipping &amp; returns</a> · <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap bundle (Popper + JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Keeps the mobile "1 of 3" workshop counter in sync with the carousel -->
+  <script>
+    const wsCarousel = document.getElementById("workshopCarousel");
+    const wsCounter = document.querySelector(".ws-counter");
+    wsCarousel.addEventListener("slid.bs.carousel", (event) => {
+      wsCounter.textContent = (event.to + 1) + " of 3 · " + event.relatedTarget.dataset.wsName;
+    });
+  </script>
+</body>
+</html>

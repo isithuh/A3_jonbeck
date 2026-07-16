@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery — Jon Beck Photography</title>
+  <meta name="description" content="Browse Jon Beck's fine art photography: portraits, landscapes, buildings and street work, all available as limited edition prints.">
+
+  <!-- Bootstrap 5.3.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts: Poppins + Lora (free for commercial use, SIL Open Font Licence) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Custom layer -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ Header / Navigation (matches index.html) ============ -->
+  <header>
+    <nav class="navbar navbar-expand-lg site-nav sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo/jon-beck-wordmark.png" alt="Jon Beck Photography wordmark logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNav" aria-controls="mainNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <!-- Primary menu — Gallery 1st + About 2nd per the A3 brief -->
+          <ul class="navbar-nav mx-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#prints">Prints</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#workshops">Workshops</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#enquire">Contact</a></li>
+          </ul>
+          <!-- Right-side actions: search + Enquire -->
+          <ul class="navbar-nav align-items-lg-center mb-0">
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <button class="nav-search" type="button" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                     fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.1-.115zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+              </button>
+            </li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+              <a class="btn btn-enquire" href="index.html#enquire">Enquire</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ 1 · Page head + filter pills ============ -->
+    <!-- The pills filter the one grid below in place — no page reloads.
+         Buttons (not links) because they change state on this page. -->
+    <section class="gal-head">
+      <div class="container">
+        <p class="eyebrow mb-2">The work</p>
+        <h1 class="poppins gal-title">Gallery</h1>
+        <p class="gal-sub">Every photograph is available as a hand-signed limited edition print. Select a collection, or click any image to view it large.</p>
+
+        <div class="gal-pills" role="group" aria-label="Filter the gallery by collection">
+          <button class="gal-pill active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="gal-pill" type="button" data-filter="portraits" aria-pressed="false">Portraits</button>
+          <button class="gal-pill" type="button" data-filter="landscape" aria-pressed="false">Landscape</button>
+          <button class="gal-pill" type="button" data-filter="buildings" aria-pressed="false">Buildings</button>
+          <button class="gal-pill" type="button" data-filter="street" aria-pressed="false">Street</button>
+        </div>
+        <p class="gal-count" aria-live="polite">Showing all 57 photographs</p>
+      </div>
+    </section>
+
+    <!-- ============ 2 · Filterable grid ============ -->
+    <!-- 12-column Bootstrap grid: 2-up mobile · 3-up tablet · 4-up desktop.
+         Each tile is a button that opens the shared lightbox modal. -->
+    <section class="gal-grid section pt-4">
+      <div class="container">
+        <!-- Heading is hidden visually but read aloud by screen readers, so the section is named -->
+        <h2 class="visually-hidden">Photographs</h2>
+        <div class="row g-3" id="galleryGrid">
+
+          <!-- —— Portraits —— -->
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The balloon" data-cat="Portraits">
+              <img src="images/gallery/portraits/01Jessica_woods.jpg" loading="lazy"
+                   alt="Conceptual portrait of a woman in a teal dress holding a balloon against a red backdrop">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Dad" data-cat="Portraits">
+              <img src="images/gallery/portraits/ALEX%2007_DAD.png" loading="lazy"
+                   alt="High-contrast black and white portrait of a bearded man staring into the camera">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The load" data-cat="Portraits">
+              <img src="images/gallery/portraits/Damian-Albuquerque-3.jpg" loading="lazy"
+                   alt="Low-lit studio scene of a man carrying a wooden beam while a woman kneels beside him">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The boxer" data-cat="Portraits">
+              <img src="images/gallery/portraits/Helen%20Holdsworth%2006.jpg" loading="lazy"
+                   alt="Black and white portrait of a boxer with gloves raised, composed sideways across the frame">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Between rounds" data-cat="Portraits">
+              <img src="images/gallery/portraits/Helen%20Holdsworth%2010.JPG" loading="lazy"
+                   alt="Black and white portrait of a smiling athlete resting across two exercise balls">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Hair study" data-cat="Portraits">
+              <img src="images/gallery/portraits/JOANNE%20CHEN.jpg" loading="lazy"
+                   alt="Mirrored black and white study of a woman tossing her hair across her face">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Cinderella" data-cat="Portraits">
+              <img src="images/gallery/portraits/Jerri-Lee-Matthews---Cinderella.jpg" loading="lazy"
+                   alt="Composite fairy-tale scene of a woman in white beside a giant glass slipper under a full moon">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Goldilocks" data-cat="Portraits">
+              <img src="images/gallery/portraits/Jerri-Lee-Matthews---Goldilocks.jpg" loading="lazy"
+                   alt="Triple-exposure of a blonde woman tasting three bowls along a long wooden table">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Lantern light" data-cat="Portraits">
+              <img src="images/gallery/portraits/Jieyu%20Zhang%203.JPG" loading="lazy"
+                   alt="Warmly lit portrait of a woman in an embroidered dress glancing downward in the dark">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Laughter" data-cat="Portraits">
+              <img src="images/gallery/portraits/Joel-Crane_03_AltFemBnW-5687.jpg" loading="lazy"
+                   alt="Black and white portrait of a woman with dreadlocks laughing with her head thrown back">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Steady gaze" data-cat="Portraits">
+              <img src="images/gallery/portraits/Joel-Crane_04_AltFemBnW-5716.jpg" loading="lazy"
+                   alt="Black and white portrait of a woman with dreadlocks looking directly at the camera">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Exhale" data-cat="Portraits">
+              <img src="images/gallery/portraits/Joel-Crane_05_AltFemBnW-6691.jpg" loading="lazy"
+                   alt="High-contrast black and white portrait of a woman exhaling a plume of smoke">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Plastic company" data-cat="Portraits">
+              <img src="images/gallery/portraits/Katie%20EC%20Cochrane2.jpg" loading="lazy"
+                   alt="Woman in a blonde wig lying among Barbie dolls in matching outfits">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Teal smoke" data-cat="Portraits">
+              <img src="images/gallery/portraits/Leah%20Toyne%2031571583%20Picture2.jpg" loading="lazy"
+                   alt="Portrait of a red-haired woman releasing a cloud of teal smoke from her hands">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Thin smoke" data-cat="Portraits">
+              <img src="images/gallery/portraits/Leah%20Toyne%2031571583Picture1.jpg" loading="lazy"
+                   alt="Black and white profile of a woman exhaling a thin stream of smoke in the dark">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Weathered" data-cat="Portraits">
+              <img src="images/gallery/portraits/Rad_Young_.jpg" loading="lazy"
+                   alt="Close black and white portrait of an elderly woman's deeply lined face">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="portraits">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Pink wig" data-cat="Portraits">
+              <img src="images/gallery/portraits/nicotine_1.JPG" loading="lazy"
+                   alt="Woman in a pink wig sitting up in bed under a leopard-print blanket, polaroids on the wall behind her">
+            </button>
+          </div>
+
+          <!-- —— Landscape —— -->
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="landscape">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="First light, Tamarama" data-cat="Landscape">
+              <img src="images/gallery/landscape/Aditi_Goenka_.jpg" loading="lazy"
+                   alt="Waves breaking over coastal rocks at first light">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="landscape">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="City after dark" data-cat="Landscape">
+              <img src="images/gallery/landscape/Brian-Paez---31319783.jpg" loading="lazy"
+                   alt="Night city skyline seen from a footbridge, a passer-by in red in the foreground">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="landscape">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The wheel" data-cat="Landscape">
+              <img src="images/gallery/landscape/CALLUM%20COCH1.jpg" loading="lazy"
+                   alt="Long exposure of a ferris wheel spinning in green and pink light at night">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="landscape">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Boatshed blue" data-cat="Landscape">
+              <img src="images/gallery/landscape/Callum%20Koch%2022.jpg" loading="lazy"
+                   alt="Blue boatshed standing on stilts above still water at night">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="landscape">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Window to the paddock" data-cat="Landscape">
+              <img src="images/gallery/landscape/David-Delaney_1.jpg" loading="lazy"
+                   alt="Weathered timber window in a stone wall framing a bare outback tree">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="landscape">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The fence line" data-cat="Landscape">
+              <img src="images/gallery/landscape/David-Delaney_2-upright.jpg" loading="lazy"
+                   alt="Wire farm fence receding across a dry paddock under a cloudy sky">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="landscape">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Frozen lake" data-cat="Landscape">
+              <img src="images/gallery/landscape/Emily-Heron.jpg" loading="lazy"
+                   alt="Snow-covered mountain range towering over a lone skier on a frozen lake">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="landscape">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Bunker sun rays" data-cat="Landscape">
+              <img src="images/gallery/landscape/James-Richards-30492613-BUNKER-SUN-RAYS.jpg" loading="lazy"
+                   alt="Windswept coastal trees glowing red in the setting sun">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="landscape">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The backflip" data-cat="Landscape">
+              <img src="images/gallery/landscape/Kelly-Byrne-2.jpg" loading="lazy"
+                   alt="Silhouette of a person caught mid-backflip over dunes at sunset">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="landscape">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Left to the grass" data-cat="Landscape">
+              <img src="images/gallery/landscape/Naveed-Farro3.jpg" loading="lazy"
+                   alt="Graffiti-covered car wreck resting in golden outback grass">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="landscape">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Body boarders" data-cat="Landscape">
+              <img src="images/gallery/landscape/Tash-Prokop-Body-Boarders-upright.jpg" loading="lazy"
+                   alt="Two body boarders walking along the shoreline at sunset">
+            </button>
+          </div>
+
+          <!-- —— Buildings —— -->
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="buildings">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Refinery dusk" data-cat="Buildings">
+              <img src="images/gallery/buildings/IMGP3477.jpg" loading="lazy"
+                   alt="Industrial refinery scaffolding lit gold at dusk">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="buildings">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Steelworks" data-cat="Buildings">
+              <img src="images/gallery/buildings/IMGP3498.jpg" loading="lazy"
+                   alt="Steel refinery towers and conveyors against a pale sky">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="buildings">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The stack" data-cat="Buildings">
+              <img src="images/gallery/buildings/IMGP3499.jpg" loading="lazy"
+                   alt="Industrial chimney releasing steam against a clear blue sky">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="buildings">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Night furnace" data-cat="Buildings">
+              <img src="images/gallery/buildings/IMGP3505.jpg" loading="lazy"
+                   alt="Blast furnace complex glittering with work lights at night">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="buildings">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The loader" data-cat="Buildings">
+              <img src="images/gallery/buildings/IMGP3588.jpg" loading="lazy"
+                   alt="Bulk-loading machinery standing on a jetty under a dawn sky">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="buildings">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Harbour gold" data-cat="Buildings">
+              <img src="images/gallery/buildings/IMGP3624.jpg" loading="lazy"
+                   alt="Ship loader glowing gold at night, reflected in the harbour water">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="buildings">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The beacon" data-cat="Buildings">
+              <img src="images/gallery/buildings/IMG_0296.jpg" loading="lazy"
+                   alt="Yellow navigation beacon on a checkered pole against rolling clouds">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="buildings">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Cranes at sunset" data-cat="Buildings">
+              <img src="images/gallery/buildings/James-Richards_10_IMG_4131.jpg" loading="lazy"
+                   alt="Harbour cranes silhouetted against an orange sunset as a bird passes overhead">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="buildings">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Modernity rising" data-cat="Buildings">
+              <img src="images/gallery/buildings/Modernity-Rising-NORM-ERICKSON.jpg" loading="lazy"
+                   alt="Glass office tower rising behind a heritage stone facade">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="buildings">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Ballarat facade" data-cat="Buildings">
+              <img src="images/gallery/buildings/Sophie-Simmons-31250843-(2).jpg" loading="lazy"
+                   alt="Black and white study of a classical stone facade with arched niches">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="buildings">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The shed" data-cat="Buildings">
+              <img src="images/gallery/buildings/Xanthe-Cohen_.jpg" loading="lazy"
+                   alt="Corrugated iron shed in bright sunlight behind long grass">
+            </button>
+          </div>
+
+          <!-- —— Street —— -->
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Night riders" data-cat="Street">
+              <img src="images/gallery/street/171643585_8e0d637bfb_b.jpg" loading="lazy"
+                   alt="People sitting on a concrete wall at night beside a bicycle">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The rest" data-cat="Street">
+              <img src="images/gallery/street/Ainlsey-Rodgers-05.jpg" loading="lazy"
+                   alt="Man resting on a public bench in a yellow wrap beside a loaded trolley">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Window shopping" data-cat="Street">
+              <img src="images/gallery/street/BEN-WRIGHT_01_9---Window-Shoppingedi.jpg" loading="lazy"
+                   alt="Person resting below a brightly lit shoe shop window at night">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Hot donuts" data-cat="Street">
+              <img src="images/gallery/street/BENGOODWIN-STREET-1.jpg" loading="lazy"
+                   alt="Crowd gathered under a neon hot donuts sign at night">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Smoke and steam" data-cat="Street">
+              <img src="images/gallery/street/BENGOODWIN-STREET-2.jpg" loading="lazy"
+                   alt="Street food vendor working through clouds of steam at a night market">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Waiting" data-cat="Street">
+              <img src="images/gallery/street/BenDunklingStreetPhoto1.jpg" loading="lazy"
+                   alt="Man seated at a street bench beside a parked car, picked out in selective colour">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The busker" data-cat="Street">
+              <img src="images/gallery/street/BronwenThurlow.JPG" loading="lazy"
+                   alt="Elderly accordion player busking beneath shopfront signs">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Crossing" data-cat="Street">
+              <img src="images/gallery/street/Caine_Sciascia-3.jpg" loading="lazy"
+                   alt="Black and white frame of three pedestrians passing on a busy footpath">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Puzzle man" data-cat="Street">
+              <img src="images/gallery/street/Chin-Yin-Pic_1.jpg" loading="lazy"
+                   alt="Market stallholder surrounded by brightly coloured jigsaw puzzles">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Match day" data-cat="Street">
+              <img src="images/gallery/street/Christoph%20Noehring%202.JPG" loading="lazy"
+                   alt="Woman in a red and white football shirt seated among cafe tables">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="School's out" data-cat="Street">
+              <img src="images/gallery/street/Christoph-Noehring---Street-12.jpg" loading="lazy"
+                   alt="Black and white frame of schoolgirls in uniform, one glancing back at the camera">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Through the crowd" data-cat="Street">
+              <img src="images/gallery/street/Christoph-Noehring---Street-14.jpg" loading="lazy"
+                   alt="Black and white frame of a woman in a dress walking through a shopping crowd">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The corner" data-cat="Street">
+              <img src="images/gallery/street/Courtney-Borrett---Street-Photography-1---RAWedit.jpg" loading="lazy"
+                   alt="Pedestrians waiting at a city corner, one man dressed in bright red">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Alone" data-cat="Street">
+              <img src="images/gallery/street/Phil%20Walker%20-%20Alone.JPG" loading="lazy"
+                   alt="Black and white view into a tattoo studio with the artist alone at the counter">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="The sitter" data-cat="Street">
+              <img src="images/gallery/street/Rayelene%20Chin%201.JPG" loading="lazy"
+                   alt="Young woman in a leopard-print headscarf beside a street artist's portrait sketches">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Parked outside" data-cat="Street">
+              <img src="images/gallery/street/benbarnard1.jpg" loading="lazy"
+                   alt="Bicycle leaning against a glittering jewellery shopfront">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Night patrol" data-cat="Street">
+              <img src="images/gallery/street/benbarnard2.JPG" loading="lazy"
+                   alt="Police officers standing outside a surf shop at night">
+            </button>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gal-item" data-category="street">
+            <button class="gal-thumb" type="button" data-bs-toggle="modal" data-bs-target="#lightbox"
+                    data-title="Shore leave" data-cat="Street">
+              <img src="images/gallery/street/brittany.JPG" loading="lazy"
+                   alt="Sailor in dress whites greeting the crowd at a daytime parade">
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Lightbox (Bootstrap 5 modal) ============ -->
+  <!-- One shared modal: JS swaps in the clicked photo and steps through
+       whichever photos the current filter is showing. -->
+  <div class="modal fade lb-modal" id="lightbox" role="dialog" tabindex="-1" aria-labelledby="lightboxLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h2 class="modal-title lb-title" id="lightboxLabel">Gallery photograph</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-0">
+          <img class="lb-img" id="lightboxImg"
+               src="images/gallery/portraits/01Jessica_woods.jpg"
+               alt="Conceptual portrait of a woman in a teal dress holding a balloon against a red backdrop">
+        </div>
+        <div class="modal-footer border-0 justify-content-between align-items-center">
+          <button class="lb-btn" type="button" id="lightboxPrev" aria-label="Previous photograph">&larr; Prev</button>
+          <p class="lb-counter mb-0" id="lightboxCounter" aria-live="polite">1 of 57</p>
+          <button class="lb-btn" type="button" id="lightboxNext" aria-label="Next photograph">Next &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Footer (matches index.html) ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row gy-4 gx-lg-5">
+        <div class="col-4 col-md-3 col-lg-4">
+          <img class="footer-logo" src="images/logo/jon-beck-combination-trimmed.png"
+               alt="Jon Beck Photography crossed-arrows logo">
+          <p class="footer-tag d-none d-lg-block mb-0">Every photograph tells a story<br>but with a difference.</p>
+        </div>
+        <div class="col-8 col-md-9 col-lg-8">
+          <div class="row gy-2 gy-md-4">
+            <div class="col-12 col-md-3 footer-group">
+              <p class="footer-head">Work</p>
+              <ul class="list-unstyled footer-links mb-0">
+                <li><a href="gallery.html">Portraits</a></li>
+                <li><a href="gallery.html">Seascapes</a></li>
+                <li><a href="gallery.html">Landscapes</a></li>
+                <li><a href="gallery.html">Buildings</a></li>
+                <li><a href="gallery.html">Street</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-3 footer-group">
+              <p class="footer-head">Shop</p>
+              <ul class="list-unstyled footer-links mb-0">
+                <li><a href="index.html#prints">Prints</a></li>
+                <li><a href="index.html#prints">Editions</a></li>
+                <li><a href="index.html#prints">Gift cards</a></li>
+                <li class="d-none d-md-block"><a href="index.html#prints">Commissions</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-3 footer-group">
+              <p class="footer-head">Studio</p>
+              <ul class="list-unstyled footer-links mb-0">
+                <li><a href="about.html">About Jon</a></li>
+                <li><a href="index.html#enquire">Press</a></li>
+                <li><a href="index.html#enquire">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-3 footer-group">
+              <p class="footer-head">Connect</p>
+              <ul class="list-unstyled footer-links mb-0">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li class="d-none d-md-block"><a href="#">Journal</a></li>
+              </ul>
+            </div>
+            <div class="col-12 footer-group d-md-none">
+              <p class="footer-head mb-0">Newsletter</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-signup row align-items-center gy-3 mt-1 mt-md-3 mt-lg-4">
+        <div class="col-lg-6 d-none d-lg-block">
+          <p class="footer-signup-label mb-0">Sign up for new editions and workshop dates.</p>
+        </div>
+        <div class="col-12 col-md-7 offset-md-5 col-lg-6 offset-lg-0">
+          <form class="footer-form d-flex gap-2" action="index.html#enquire" method="post">
+            <label class="visually-hidden" for="newsletter">Email address</label>
+            <input class="form-control" type="email" id="newsletter" name="newsletter"
+                   placeholder="your@email.com" autocomplete="email" required>
+            <button class="btn btn-subscribe" type="submit" aria-label="Subscribe">
+              <span class="d-md-none" aria-hidden="true">Subscribe</span>
+              <span class="d-none d-md-inline d-lg-none" aria-hidden="true">&rarr;</span>
+              <span class="d-none d-lg-inline" aria-hidden="true">Subscribe &rarr;</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-base mt-4 pt-3">
+        <p class="mb-0">&copy; Jon Beck Photography 2030<span class="d-none d-md-inline">. All rights reserved.</span></p>
+        <p class="mb-0"><a href="#">Privacy</a> · <a href="#">Shipping &amp; returns</a> · <a href="#">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap bundle (Popper + JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Gallery behaviour: filter pills + lightbox stepping.
+       Plain JS on top of the Bootstrap modal component. -->
+  <script>
+    const pills = document.querySelectorAll(".gal-pill");
+    const items = document.querySelectorAll(".gal-item");
+    const countLine = document.querySelector(".gal-count");
+    const lbImg = document.getElementById("lightboxImg");
+    const lbTitle = document.getElementById("lightboxLabel");
+    const lbCounter = document.getElementById("lightboxCounter");
+    const lightboxEl = document.getElementById("lightbox");
+    let current = 0;
+
+    /* The photos the lightbox steps through = whatever the filter shows */
+    function visibleThumbs() {
+      return Array.from(document.querySelectorAll(".gal-item:not(.d-none) .gal-thumb"));
+    }
+
+    /* Filter pills: show/hide tiles, restyle the active pill, update count */
+    pills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        pills.forEach((p) => {
+          p.classList.remove("active");
+          p.setAttribute("aria-pressed", "false");
+        });
+        pill.classList.add("active");
+        pill.setAttribute("aria-pressed", "true");
+        const filter = pill.dataset.filter;
+        items.forEach((item) => {
+          item.classList.toggle("d-none", filter !== "all" && item.dataset.category !== filter);
+        });
+        const n = visibleThumbs().length;
+        countLine.textContent = filter === "all"
+          ? "Showing all " + n + " photographs"
+          : "Showing " + n + " " + pill.textContent.toLowerCase() + " photographs";
+      });
+    });
+
+    /* Put the clicked photo into the modal */
+    function showPhoto(index) {
+      const thumbs = visibleThumbs();
+      current = (index + thumbs.length) % thumbs.length;
+      const thumb = thumbs[current];
+      const img = thumb.querySelector("img");
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbTitle.textContent = thumb.dataset.title + " · " + thumb.dataset.cat;
+      lbCounter.textContent = (current + 1) + " of " + thumbs.length;
+    }
+
+    document.querySelectorAll(".gal-thumb").forEach((thumb) => {
+      thumb.addEventListener("click", () => showPhoto(visibleThumbs().indexOf(thumb)));
+    });
+    document.getElementById("lightboxPrev").addEventListener("click", () => showPhoto(current - 1));
+    document.getElementById("lightboxNext").addEventListener("click", () => showPhoto(current + 1));
+
+    /* Arrow keys step through while the lightbox is open */
+    lightboxEl.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") showPhoto(current - 1);
+      if (event.key === "ArrowRight") showPhoto(current + 1);
+    });
+  </script>
+</body>
+</html>
