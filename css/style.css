@@ -160,7 +160,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.01em; }
 @media (min-width: 992px) {
   .hero {
     padding: 5rem 0;
-    background: url("../images/gallery/landscape/Naveed-Farro3.jpg") center / cover no-repeat;
+    background: url("../../images/gallery/landscape/Naveed-Farro3.jpg") center / cover no-repeat;
     display: flex;
     align-items: center;
     min-height: 72vh;
@@ -398,6 +398,69 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.01em; }
   font-size: 0.9rem;
   line-height: 1.5;
   margin: 0;
+}
+
+/* Usability fix 3: starting prices.
+   Sits directly under the four feature columns so size and price are read
+   together, which is how Participant 3 said she makes a buying decision.
+   Stacks on mobile, becomes a three-across row from tablet up. */
+.ed-prices {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(31, 31, 29, 0.18);
+  border-radius: 2px;
+  background: var(--jb-paper);
+}
+.ed-prices-heading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--jb-claret);
+  margin-bottom: 1rem;
+}
+.ed-price-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.ed-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(31, 31, 29, 0.12);
+}
+.ed-price-size {
+  font-family: "Lora", Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--jb-ink);
+}
+.ed-price-figure {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--jb-claret);
+  white-space: nowrap;
+}
+.ed-price-note {
+  margin-top: 1rem;
+  font-family: "Lora", Georgia, serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--jb-muted);
+}
+
+/* Tablet and up: the three sizes sit side by side */
+@media (min-width: 768px) {
+  .ed-price-list { flex-direction: row; gap: 2rem; }
+  .ed-price {
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding-bottom: 0;
+    border-bottom: none;
+    border-left: 2px solid var(--jb-orange);
+    padding-left: 1rem;
+  }
+  .ed-prices { padding: 1.75rem 2rem; }
 }
 
 /* Tablet only: bordered card, icon to the LEFT, vertically centred, text left-aligned */
@@ -839,6 +902,26 @@ footer.site-footer a:hover { color: #6b2c2c; text-decoration: underline; }
   width: auto;
   height: auto;
   object-fit: contain;
+}
+/* Usability fix 7: zoomable stage.
+   Participant 1 could not look closer at a photograph and opened it in a
+   separate browser tab instead. The stage scrolls once the image is scaled
+   past its container, so every part of the frame stays reachable. */
+.lb-stage {
+  overflow: auto;
+  max-height: 70vh;
+}
+.lb-img { cursor: zoom-in; transition: transform 0.25s ease; }
+.lb-stage.is-zoomed { cursor: grab; }
+.lb-stage.is-zoomed .lb-img {
+  max-width: none;
+  max-height: none;
+  width: 200%;
+  cursor: zoom-out;
+}
+/* Respect a reduced-motion preference: change state, skip the animation */
+@media (prefers-reduced-motion: reduce) {
+  .lb-img { transition: none; }
 }
 .lb-counter {
   font-family: "Lora", Georgia, serif;
