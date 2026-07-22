@@ -401,15 +401,12 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.01em; }
 }
 
 /* Usability fix 3: starting prices.
-   Sits directly under the four feature columns so size and price are read
-   together, which is how Participant 3 said she makes a buying decision.
-   Stacks on mobile, becomes a three-across row from tablet up. */
+   Styled to read as a natural continuation of the four feature columns
+   above, not a bolted-on panel: no box, no background, centred, using the
+   same quiet claret divider the trust strip uses. */
 .ed-prices {
-  margin-top: 2.5rem;
-  padding: 1.5rem;
-  border: 1px solid rgba(31, 31, 29, 0.18);
-  border-radius: 2px;
-  background: var(--jb-paper);
+  margin-top: 3rem;
+  text-align: center;
 }
 .ed-prices-heading {
   font-size: 0.8rem;
@@ -417,50 +414,60 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.01em; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--jb-claret);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
-.ed-price-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.ed-price-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 .ed-price {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(31, 31, 29, 0.12);
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
 }
 .ed-price-size {
   font-family: "Lora", Georgia, serif;
   font-size: 0.95rem;
-  color: var(--jb-ink);
+  color: var(--jb-muted);
 }
 .ed-price-figure {
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--jb-claret);
   white-space: nowrap;
 }
 .ed-price-note {
-  margin-top: 1rem;
+  margin: 1.75rem auto 0;
+  max-width: 42rem;
   font-family: "Lora", Georgia, serif;
   font-size: 0.85rem;
   line-height: 1.6;
   color: var(--jb-muted);
 }
 
-/* Tablet and up: the three sizes sit side by side */
+/* Tablet and up: three sizes in a centred row, separated by the thin claret
+   divider used on the trust strip rather than a boxed border */
 @media (min-width: 768px) {
-  .ed-price-list { flex-direction: row; gap: 2rem; }
-  .ed-price {
-    flex: 1 1 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-    padding-bottom: 0;
-    border-bottom: none;
-    border-left: 2px solid var(--jb-orange);
-    padding-left: 1rem;
+  .ed-price-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3.5rem;
   }
-  .ed-prices { padding: 1.75rem 2rem; }
+  .ed-price {
+    position: relative;
+    padding: 0 0.5rem;
+  }
+  .ed-price:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    left: -1.75rem;
+    top: 0.1rem;
+    bottom: 0.1rem;
+    border-left: 1px solid rgba(107, 44, 44, 0.35);
+  }
 }
 
 /* Tablet only: bordered card, icon to the LEFT, vertically centred, text left-aligned */
