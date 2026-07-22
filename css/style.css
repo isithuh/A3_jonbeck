@@ -160,7 +160,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.01em; }
 @media (min-width: 992px) {
   .hero {
     padding: 5rem 0;
-    background: url("../../images/gallery/landscape/Naveed-Farro3.jpg") center / cover no-repeat;
+    background: url("../images/gallery/landscape/Naveed-Farro3.jpg") center / cover no-repeat;
     display: flex;
     align-items: center;
     min-height: 72vh;
